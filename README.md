@@ -1,0 +1,2 @@
+# EaseSumApp
+Text Summarizer
