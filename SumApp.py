@@ -7,7 +7,6 @@ from gensim.summarization import summarize
 import file_upload as fu
 from pysummarization.nlpbase.auto_abstractor import AutoAbstractor
 from pysummarization.tokenizabledoc.simple_tokenizer import SimpleTokenizer
-#from pysummarization.web_scraping import WebScraping
 from pysummarization.abstractabledoc.std_abstractor import StdAbstractor
 from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstractor
 
@@ -127,15 +126,9 @@ def TEXT_PREPROCESSING():
    
     text = " "
     if (new_text != " " and new_text != "" and new_text != None):
-        #for p in new_text:
-            #new_text = new_text.translate(string.maketrans('',''), string.punctuation)
-            #text = re.sub(r'\([^)]*\)', '', new_text)
-            #st.write(text)
             text = re.sub('"','', new_text)
-            #text = re.sub(r'\d+', '', text)
             text = ' '.join([contraction_map[t] if t in contraction_map else t for t in text.split(" ")])    
             text = re.sub(r"'s\b","",text)
-            #text = re.sub(r'[0-9]', ' ', text)
             
     return text
 
